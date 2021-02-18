@@ -1,0 +1,6 @@
+<!--miniprogram/pages/near/near.wxml-->
+<search>s</search>
+<view class="map">
+  <map longitude="{{longitude}}" latitude="{{latitude}}" show-location markers="{{markers}}" bindmarkertap="markertap"></map>
+  <!-- map是地图组件；show-location：可以在当前位置放个小点；longitude，latitude：经纬度；bindmarkertap：击标记点触发事件 -->
+</view>

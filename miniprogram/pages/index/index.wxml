@@ -1,0 +1,33 @@
+<!--miniprogram/pages/index/index.wxml-->
+<wxs src="/utils/wordSplit.wxs" module="m1"></wxs>
+<wxs src="/utils/unitFomat.wxs" module="m2"></wxs>
+
+<search></search>
+
+<view class="index">
+  <swiper indicator-dots="{{true}}" autoplay="{{false}}" class="index-swiper" circular="{{true}}">
+    <block wx:for="{{background}}" wx:key="index">
+      <swiper-item>
+        <image mode="aspectFill" src="{{item.fileId}}" class="slide-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="index_tab">
+    <view class="{{current == 'links'? 'active' : ''}}" data-current="links" bindtap="handleCurrent">推荐</view>
+    <view class="{{current == 'time'? 'active' : ''}}" data-current="time" bindtap="handleCurrent">最新</view>
+  </view>
+
+  <view class="index-list">
+    <view class="index-list-item" wx:for="{{listData}}" wx:key="index">
+      <image mode="aspectFill" src="{{item.userPhoto}}" bindtap="hanleDetail" data-id="{{item._id}}"/>
+      <view class="index-list-text">
+        <text>{{m1.wordSplit(item.nickName)}}</text>
+        <text bindtap="handleLinks" data-id="{{item._id}}">
+          <text class="iconfont iconxihuan"></text>
+          <text>{{m2.unitFomat(item.links)}}</text>
+        </text>
+      </view>
+    </view>
+  </view>
+</view>

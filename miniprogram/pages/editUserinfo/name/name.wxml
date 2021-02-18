@@ -1,0 +1,5 @@
+<!--miniprogram/pages/editUserinfo/name/name.wxml-->
+<button class="button-text button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">使用微信昵称</button>
+<button class="button-text button" bindtap="handleBtn">自定义昵称</button>
+<input type="text" value="{{nickName}}" bindinput="handleText"/>
+<!-- bindinput：键盘输入时触发； bindtap：点击事件触发-->

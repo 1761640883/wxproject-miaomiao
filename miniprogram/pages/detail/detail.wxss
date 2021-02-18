@@ -1,0 +1,6 @@
+/* miniprogram/pages/detail/detail.wxss */
+.button-text.button{width: 100%;background: rgb(224, 224, 224);border-radius: 0;border-top: 1px solid rgb(190, 190, 190);}
+.detail-item{margin: 20rpx;border-bottom: 1px solid #b4b5b6;padding: 20rpx;display: flex;align-items: center;}
+.detail-item-img image{width: 100%;}
+
+.detail-text{margin-right: 10rpx;}

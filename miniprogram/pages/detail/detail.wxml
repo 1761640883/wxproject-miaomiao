@@ -1,0 +1,35 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<view class=""> 
+  <block wx:if="{{!isHidden}}">
+    <button class="button-text button" wx:if="{{isFriend}}">已是好友</button>
+    <button class="button-text button" wx:else bindtap="handleAddFriend">添加好友</button>
+  </block>
+
+  <view class="detail-item-img">
+    <image src="{{detalist.userPhoto}}" mode="aspectFill"></image>
+  </view>
+  <view class="detail-item">
+    <text>昵称：</text>
+    <text>{{detalist.nickName}}</text>
+  </view>
+  <view class="detail-item">
+    <text>个性签名：</text>
+    <text>{{detalist.signature}}</text>
+  </view>
+  <view class="detail-item">
+    <text>手机号：</text>
+    <block wx:if="{{isFriend}}">
+      <text class="detail-text">{{detalist.phoneNumber}}</text>
+      <call-phone wx:if="{{detalist.phoneNumber}}" phoneNumber="{{detalist.phoneNumber}}"/><!-- phoneNumber是自定义属性(用于父子通信)-->
+    </block>
+    <text wx:else>仅好友可见</text>
+  </view>
+  <view class="detail-item">
+    <text>微信号：</text>
+    <block wx:if="{{isFriend}}">
+      <text class="detail-text">{{detalist.weixinNumber}}</text>
+      <copy-text wx:if="{{detalist.weixinNumber}}" weixinNumber="{{detalist.weixinNumber}}"></copy-text>
+    </block>
+    <text wx:else>仅好友可见</text>
+  </view>
+</view>

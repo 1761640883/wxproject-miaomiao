@@ -1,0 +1,3 @@
+/* miniprogram/pages/editUserinfo/signature/signature.wxss */
+.button-text.button{width: 100%;background: rgb(207, 207, 207);border-radius: 0;}
+input{border: 1px solid #b4b5b6;}

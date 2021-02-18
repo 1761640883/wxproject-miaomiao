@@ -1,0 +1,30 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view class="user">
+  <view class="user-info">
+    <image src="{{userPhoto}}"></image>
+    <text  wx:if="{{logged}}">欢迎您：{{nickName}}</text>
+    <button wx:else disabled="{{disabled}}" class="user-info-button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登录</button>
+    <!-- open-type="getUserInfo" :可以获取用户信息； bindgetuserinfo：用户点击该按钮时，会返回获取到的用户信息-->
+  </view>
+
+  <view wx:if="{{logged}}" class="user-list">
+      <navigator url="../editUserinfo/editUserinfo" open-type="navigate">
+        <view class="user-list-item">
+          <text>编辑个人信息</text>
+          <text class="iconfont iconarrow-right"></text>
+        </view>
+      </navigator>
+      <navigator url="../friendList/friendList" open-type="navigate">
+        <view class="user-list-item">
+          <text>查看好友列表</text>
+          <text class="iconfont iconarrow-right"></text>
+        </view>
+      </navigator>
+      <navigator url="{{'../detail/detail?userId=' + id}}" open-type="navigate">
+        <view class="user-list-item">
+          <text>个人主页</text>
+          <text class="iconfont iconarrow-right"></text>
+        </view>
+      </navigator>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+var unitFomat = function(word){
+  if(word >= 1000){
+    word = (word / 1000).toFixed(1) + 'k'
+  }
+  return word
+};
+
+module.exports.unitFomat = unitFomat; 
